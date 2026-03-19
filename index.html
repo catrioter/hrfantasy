@@ -817,15 +817,21 @@
             #tableContainer table {
                 display: none !important;
             }
-
-            .mobile-card {
-                display: block !important;
-            }
         }
 
         /* Карточки для мобильных */
         .mobile-card {
             display: none;
+        }
+
+        .mobile-cards {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .mobile-cards {
+                display: block !important;
+            }
         }
 
         .mobile-card-container {
