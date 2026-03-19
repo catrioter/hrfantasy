@@ -66,9 +66,42 @@
             font-weight: 300;
             margin-bottom: 50px;
             letter-spacing: 2px;
-            color: #fff;
+            background: linear-gradient(90deg, #ff6b35 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             border-bottom: 3px solid #ff6b35;
             padding-bottom: 20px;
+        }
+        
+        h3 {
+            color: #ff6b35;
+        }
+        
+        strong {
+            color: #7c3aed;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #ff6b35;
+            font-style: normal;
+        }
+        
+        p {
+            color: #e0e0e0;
+        }
+        
+        .highlight-orange {
+            color: #ff6b35;
+        }
+        
+        .highlight-purple {
+            color: #7c3aed;
+        }
+        
+        .highlight-white {
+            color: #fff;
         }
         
         .stats {
@@ -97,11 +130,13 @@
             font-size: 2.5em;
             margin-bottom: 15px;
             font-weight: 300;
+            color: #ff6b35;
         }
         
         .stat-card p {
             font-size: 0.95em;
             opacity: 0.7;
+            color: #e0e0e0;
         }
         
         table {
@@ -112,18 +147,20 @@
         
         table th {
             background: #1a1a1a;
-            color: #fff;
+            color: #ff6b35;
             padding: 20px 15px;
             text-align: left;
             font-weight: 500;
             border-bottom: 2px solid #ff6b35;
             font-size: 0.9em;
+            letter-spacing: 0.5px;
         }
         
         table td {
             padding: 18px 15px;
             border-bottom: 1px solid #1a1a1a;
             font-size: 0.9em;
+            color: #e0e0e0;
         }
         
         table tr:hover {
@@ -139,7 +176,7 @@
         #analysisContainer > div {
             background: #1a1a1a;
             border: 2px solid #ff6b35;
-            color: #fff;
+            color: #e0e0e0;
             padding: 30px;
             border-radius: 2px;
             transition: all 0.3s;
@@ -165,6 +202,11 @@
             font-size: 0.9em;
             line-height: 1.6;
             opacity: 0.8;
+            color: #e0e0e0;
+        }
+        
+        #analysisContainer strong {
+            color: #ff6b35;
         }
         
         footer {
@@ -172,14 +214,18 @@
             border-top: 1px solid #2a2a2a;
             padding: 40px;
             text-align: center;
-            color: #666;
+            color: #7c3aed;
             font-size: 0.9em;
             margin-top: 80px;
         }
         
+        footer p {
+            color: #7c3aed;
+        }
+        
         .empty-message {
             text-align: center;
-            color: #666;
+            color: #ff6b35;
             padding: 60px 20px;
         }
         
@@ -439,6 +485,126 @@
                 </div>
             </div>
             
+            <div class="section">
+                <h2>📝 Добавить новое исследование</h2>
+                <div style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%); border: 2px solid #ff6b35; padding: 50px; border-radius: 4px;">
+                    <form id="researchForm">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
+                            <div>
+                                <label for="respondentName" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">ФИО респондента *</label>
+                                <input type="text" id="respondentName" name="respondentName" required style="width: 100%; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit;" 
+                                    onFocus="this.style.borderColor='#ff6b35'; this.style.boxShadow='0 0 10px rgba(255, 107, 53, 0.2)';"
+                                    onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';"></input>
+                            </div>
+                            <div>
+                                <label for="company" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">Компания *</label>
+                                <input type="text" id="company" name="company" required style="width: 100%; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit;" 
+                                    onFocus="this.style.borderColor='#ff6b35'; this.style.boxShadow='0 0 10px rgba(255, 107, 53, 0.2)';"
+                                    onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';">
+                            </div>
+                            <div>
+                                <label for="researchDate" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">Дата внедрения *</label>
+                                <input type="date" id="researchDate" name="researchDate" required style="width: 100%; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit;"
+                                    onFocus="this.style.borderColor='#ff6b35'; this.style.boxShadow='0 0 10px rgba(255, 107, 53, 0.2)';"
+                                    onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';">
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
+                            <div>
+                                <label for="researchCategory" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">Категория *</label>
+                                <select id="researchCategory" name="researchCategory" required style="width: 100%; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit; cursor: pointer;"
+                                    onFocus="this.style.borderColor='#7c3aed'; this.style.boxShadow='0 0 10px rgba(124, 58, 237, 0.2)';"
+                                    onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';">
+                                    <option value="">Выберите категорию</option>
+                                    <option value="Скрининг CV">Скрининг CV</option>
+                                    <option value="Интервью">Интервью</option>
+                                    <option value="Предсказание успеха">Предсказание успеха</option>
+                                    <option value="Поиск талантов">Поиск талантов</option>
+                                    <option value="Assessments">Assessments</option>
+                                    <option value="Анализ культуры">Анализ культуры</option>
+                                    <option value="Другое">Другое</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="researchEmail" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">Email контакта</label>
+                                <input type="email" id="researchEmail" name="researchEmail" style="width: 100%; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit;"
+                                    onFocus="this.style.borderColor='#ff6b35'; this.style.boxShadow='0 0 10px rgba(255, 107, 53, 0.2)';"
+                                    onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';">
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label for="researchContent" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">Описание исследования *</label>
+                            <textarea id="researchContent" name="researchContent" required placeholder="Подробное описание исследования, результатов и выводов..." style="width: 100%; height: 130px; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit; resize: vertical; line-height: 1.5;"
+                                onFocus="this.style.borderColor='#ff6b35'; this.style.boxShadow='0 0 10px rgba(255, 107, 53, 0.2)';"
+                                onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';"></textarea>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px;">
+                            <div>
+                                <label for="researchImpact" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">Уровень влияния</label>
+                                <select id="researchImpact" name="researchImpact" style="width: 100%; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit; cursor: pointer;"
+                                    onFocus="this.style.borderColor='#ff6b35'; this.style.boxShadow='0 0 10px rgba(255, 107, 53, 0.2)';"
+                                    onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';">
+                                    <option value="8">8 - Высокое</option>
+                                    <option value="9">9 - Очень высокое</option>
+                                    <option value="10">10 - Критическое</option>
+                                    <option value="7">7 - Среднее</option>
+                                    <option value="6">6 - Умеренное</option>
+                                    <option value="5">5 - Заметное</option>
+                                    <option value="4">4 - Низкое</option>
+                                    <option value="3">3 - Минимальное</option>
+                                    <option value="2">2 - Очень низкое</option>
+                                    <option value="1">1 - Экспериментальное</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="researchStatus" style="display: block; margin-bottom: 10px; color: #fff; font-weight: 400; font-size: 0.95em; letter-spacing: 0.5px;">Статус внедрения</label>
+                                <select id="researchStatus" name="researchStatus" style="width: 100%; padding: 14px 16px; background: #0f0f0f; border: 2px solid #2a2a2a; color: #e0e0e0; border-radius: 4px; font-size: 0.95em; transition: all 0.3s; font-family: inherit; cursor: pointer;"
+                                    onFocus="this.style.borderColor='#7c3aed'; this.style.boxShadow='0 0 10px rgba(124, 58, 237, 0.2)';"
+                                    onBlur="this.style.borderColor='#2a2a2a'; this.style.boxShadow='none';">
+                                    <option value="Активно используется">Активно используется</option>
+                                    <option value="Тестирование">Тестирование</option>
+                                    <option value="Планируется">Планируется</option>
+                                    <option value="Завершено">Завершено</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px; justify-content: center; padding-top: 20px; border-top: 2px solid rgba(255, 107, 53, 0.2);">
+                            <button type="submit" style="background: linear-gradient(90deg, #ff6b35 0%, #7c3aed 100%); color: #fff; padding: 16px 40px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; letter-spacing: 1px; font-size: 1em; transition: all 0.3s; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);"
+                                onMouseEnter="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(255, 107, 53, 0.3)';"
+                                onMouseLeave="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 107, 53, 0.2)';">
+                                ✓ Добавить исследование
+                            </button>
+                            <button type="reset" style="background: #2a2a2a; color: #e0e0e0; padding: 16px 40px; border: 2px solid #ff6b35; border-radius: 4px; cursor: pointer; font-weight: 500; letter-spacing: 1px; font-size: 1em; transition: all 0.3s;"
+                                onMouseEnter="this.style.background='#3a3a3a'; this.style.borderColor='#7c3aed';"
+                                onMouseLeave="this.style.background='#2a2a2a'; this.style.borderColor='#ff6b35';">
+                                ↻ Очистить форму
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📊 Статистика</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3 id="totalCount">12</h3>
+                        <p>Всего инноваций</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="avgImpact">8.1</h3>
+                        <p>Средний уровень влияния</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="activeCount">12</h3>
+                        <p>Активно используется</p>
+                    </div>
+                </div>
+            </div>
             <div class="section">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
                     <h2 style="margin: 0;">📋 Собранные исследования</h2>
